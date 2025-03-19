@@ -80,6 +80,7 @@ yarn test:integration
 - [ ] Adjusting some integration and unit tests
 - [ ] Add API_KEY to the API request
 - [ ] Using zod to schema validation
+- [ ] Implement CI using Github Actions
 
 ## License
 

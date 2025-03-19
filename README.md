@@ -84,12 +84,13 @@ yarn test:integration
 
 ## Features
 
-- [ ] Validate application using Docker and docker-compose
-- [ ] Adjusting some integration and unit tests
+- [ ] Create mock database
+- [ ] Adding Docker and docker-compose
+- [ ] Adjustintegration and unit tests
 - [ ] Add API_KEY to the API request
-- [ ] Using zod to schema validation
-- [ ] Implement CI using Github Actions
+- [ ] Add zod to schema validation
 - [ ] Create migrations for the database using sequelize-cli
+- [ ] Implement CI using Github Actions
 
 ## License
 

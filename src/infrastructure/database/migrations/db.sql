@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS payment_api
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE payment_api;
+
+CREATE TABLE payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    amount DECIMAL(10, 2) NOT NULL,
+    currency VARCHAR(3) NOT NULL,
+    method ENUM('CREDIT_CARD', 'PAYPAL','PIX') NOT NULL,
+    product_id VARCHAR(255) NOT NULL,
+    payment_id VARCHAR(255) NOT NULL UNIQUE,
+    status ENUM('PROCESSED', 'CANCELED') NOT NULL DEFAULT 'PENDING',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    INDEX idx_product_id (product_id),
+    INDEX idx_status (status)
+);

@@ -28,6 +28,14 @@ Copy the example environment file:
 cp .env.example .env
 ```
 
+### Database Setup
+
+Import the database schema:
+
+```bash
+mysql -u your_username -p < src/infrastructure/database/migrations/db.sql
+```
+
 ### Running Locally
 
 1. Install dependencies:
@@ -81,6 +89,7 @@ yarn test:integration
 - [ ] Add API_KEY to the API request
 - [ ] Using zod to schema validation
 - [ ] Implement CI using Github Actions
+- [ ] Create migrations for the database using sequelize-cli
 
 ## License
 

@@ -1,6 +1,4 @@
 import { config } from '@config/environment';
-import cors from '@fastify/cors';
-import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
@@ -27,8 +25,6 @@ export async function createServer(): Promise<FastifyInstance> {
     logger: envToLogger[config.server.nodeEnv],
   });
 
-  await server.register(cors);
-  await server.register(helmet);
   await server.register(rateLimit, {
     max: 100,
     timeWindow: 1000,

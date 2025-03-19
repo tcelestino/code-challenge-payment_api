@@ -14,6 +14,8 @@ This project follows the hexagonal architecture (ports and adapters) pattern:
 ## Prerequisites
 
 - Node.js 20
+- Redis
+- MySQL
 - Yarn
 
 ## Getting Started
@@ -72,11 +74,11 @@ yarn test
 yarn test:integration
 ```
 
-## TODO
+## Features
 
 - [ ] Validate application using Docker and docker-compose
 - [ ] Adjusting some integration and unit tests
-- [ ] Add API_KEY to the request
+- [ ] Add API_KEY to the API request
 - [ ] Using zod to schema validation
 
 ## License

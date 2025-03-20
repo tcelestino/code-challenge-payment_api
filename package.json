@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:integration": "vitest --config vitest.integration.config.ts",
-    "mock_server": "mocks-server"
+    "mock_server": "mocks-server",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "payment",

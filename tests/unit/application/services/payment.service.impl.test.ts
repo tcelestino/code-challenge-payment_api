@@ -3,7 +3,7 @@ import { PaymentNotFoundError } from '@domain/errors/payment-not-found.error';
 import { PaymentMethod, PaymentStatus } from '@domain/models/payment.model';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-describe.only('PaymentServiceImpl', () => {
+describe('PaymentServiceImpl', () => {
   let paymentService: PaymentServiceImpl;
   let mockPaymentRepository: any;
   let mockPaymentProviderService: any;

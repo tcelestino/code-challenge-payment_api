@@ -1,5 +1,5 @@
-import { config } from '@config/environment';
 import { Sequelize } from 'sequelize';
+import { config } from '../../config/environment';
 
 export const sequelize = new Sequelize({
   dialect: 'mysql',

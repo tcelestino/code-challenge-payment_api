@@ -1,5 +1,5 @@
-import { Payment, PaymentMethod, PaymentStatus } from '@domain/models/payment.model';
 import { DataTypes, Model, Optional } from 'sequelize';
+import { Payment, PaymentMethod, PaymentStatus } from '../../../domain/models/payment.model';
 import { sequelize } from '../sequelize';
 
 interface PaymentCreationAttributes extends Optional<Payment, 'id' | 'createdAt' | 'updatedAt'> {}

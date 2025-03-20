@@ -1,10 +1,10 @@
-import { config } from '@config/environment';
 import rateLimit from '@fastify/rate-limit';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
-import { errorHandler } from '@interfaces/http/middlewares/error-handler';
-import { paymentRoutes } from '@interfaces/http/routes/payment.routes';
 import fastify, { FastifyInstance } from 'fastify';
+import { config } from './config/environment';
+import { errorHandler } from './interfaces/http/middlewares/error-handler';
+import { paymentRoutes } from './interfaces/http/routes/payment.routes';
 
 const envToLogger = {
   development: {

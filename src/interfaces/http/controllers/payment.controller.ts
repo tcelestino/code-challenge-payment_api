@@ -1,5 +1,5 @@
-import { PaymentService } from '@domain/services/payment.service';
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { PaymentService } from '../../../domain/services/payment.service';
 
 //TODO: create interfaces to body and params
 

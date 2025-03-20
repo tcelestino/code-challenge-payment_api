@@ -1,6 +1,6 @@
-import { config } from '@config/environment';
-// import { initializeDatabase } from '@infrastructure/database/sequelize';
-import { initializeRedis } from '@infrastructure/cache/redis';
+import { config } from './config/environment';
+// import { initializeDatabase } from './infrastructure/database/sequelize';
+import { initializeRedis } from './infrastructure/cache/redis';
 import { createServer } from './server';
 
 const start = async () => {

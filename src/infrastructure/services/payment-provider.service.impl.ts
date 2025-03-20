@@ -1,11 +1,11 @@
-import { config } from '@config/environment';
-import { PaymentProviderError } from '@domain/errors/payment-provider.error';
+import { config } from '../../config/environment';
+import { PaymentProviderError } from '../../domain/errors/payment-provider.error';
 import {
   GetPaymentResponse,
   InitiatePaymentRequest,
   InitiatePaymentResponse,
   PaymentProviderService,
-} from '@domain/services/payment-provider.service';
+} from '../../domain/services/payment-provider.service';
 import { cacheSet } from '../cache/redis';
 
 export class PaymentProviderServiceImpl implements PaymentProviderService {

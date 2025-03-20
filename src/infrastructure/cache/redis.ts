@@ -1,5 +1,5 @@
-import { config } from '@config/environment';
 import Redis from 'ioredis';
+import { config } from '../../config/environment';
 
 export const redisClient = new Redis({
   host: config.redis.host,
@@ -23,7 +23,11 @@ export async function cacheGet<T>(key: string): Promise<T | null> {
   return JSON.parse(data) as T;
 }
 
-export async function cacheSet<T>(key: string, value: T, ttlSeconds = config.cache.ttl): Promise<void> {
+export async function cacheSet<T>(
+  key: string,
+  value: T,
+  ttlSeconds = config.cache.ttl,
+): Promise<void> {
   await redisClient.set(key, JSON.stringify(value), 'EX', ttlSeconds);
 }
 

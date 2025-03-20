@@ -1,18 +1,18 @@
-import { config } from '@config/environment';
-import { PaymentNotFoundError } from '@domain/errors/payment-not-found.error';
-import { Payment, PaymentMethod, PaymentStatus } from '@domain/models/payment.model';
-import { PaymentRepository } from '@domain/repositories/payment.repository';
+import { config } from '../../config/environment';
+import { PaymentNotFoundError } from '../../domain/errors/payment-not-found.error';
+import { Payment, PaymentMethod, PaymentStatus } from '../../domain/models/payment.model';
+import { PaymentRepository } from '../../domain/repositories/payment.repository';
 import {
   GetPaymentResponse,
   InitiatePaymentRequest,
   PaymentProviderService,
-} from '@domain/services/payment-provider.service';
+} from '../../domain/services/payment-provider.service';
 import {
   CreatePaymentDTO,
   PaymentResponseDTO,
   PaymentService,
-} from '@domain/services/payment.service';
-import { cacheGet } from '@infrastructure/cache/redis';
+} from '../../domain/services/payment.service';
+import { cacheGet } from '../../infrastructure/cache/redis';
 
 export class PaymentServiceImpl implements PaymentService {
   constructor(

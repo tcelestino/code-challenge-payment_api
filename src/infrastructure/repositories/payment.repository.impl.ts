@@ -1,6 +1,6 @@
-import { PaymentAlreadyExistsError } from '@domain/errors/payment-already-exists.error';
-import { Payment, PaymentStatus } from '@domain/models/payment.model';
-import { PaymentRepository } from '@domain/repositories/payment.repository';
+import { PaymentAlreadyExistsError } from '../../domain/errors/payment-already-exists.error';
+import { Payment, PaymentStatus } from '../../domain/models/payment.model';
+import { PaymentRepository } from '../../domain/repositories/payment.repository';
 import { PaymentModel } from '../database/models/payment.model';
 
 export class PaymentRepositoryImpl implements PaymentRepository {

@@ -1,7 +1,7 @@
-import { PaymentServiceImpl } from '@application/services/payment.service.impl';
-import { PaymentRepositoryImpl } from '@infrastructure/repositories/payment.repository.impl';
-import { PaymentProviderServiceImpl } from '@infrastructure/services/payment-provider.service.impl';
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
+import { PaymentServiceImpl } from '../../../application/services/payment.service.impl';
+import { PaymentRepositoryImpl } from '../../../infrastructure/repositories/payment.repository.impl';
+import { PaymentProviderServiceImpl } from '../../../infrastructure/services/payment-provider.service.impl';
 import { PaymentController } from '../controllers/payment.controller';
 import { createSchemaValidation, getSchemaValidation } from '../schemas/payment.schema';
 

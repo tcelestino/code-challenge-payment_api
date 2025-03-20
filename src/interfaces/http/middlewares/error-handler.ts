@@ -1,7 +1,7 @@
-import { PaymentNotFoundError } from '@domain/errors/payment-not-found.error';
-import { PaymentProviderError } from '@domain/errors/payment-provider.error';
 import { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import { ZodError } from 'zod';
+import { PaymentNotFoundError } from '../../../domain/errors/payment-not-found.error';
+import { PaymentProviderError } from '../../../domain/errors/payment-provider.error';
 
 export function errorHandler(
   error: FastifyError,

@@ -1,13 +1,12 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { PaymentService } from '../../../domain/services/payment.service';
-
-//TODO: create interfaces to body and params
+import { CreatePaymentBody, GetPaymentParams } from './interfaces/payment.interface';
 
 export class PaymentController {
   constructor(private readonly paymentService: PaymentService) {}
 
   async createPayment(request: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { amount, currency, method, product_id } = request.body as any;
+    const { amount, currency, method, product_id } = request.body as CreatePaymentBody;
 
     const payment = await this.paymentService.createPayment({
       amount,
@@ -20,7 +19,7 @@ export class PaymentController {
   }
 
   async getPaymentById(request: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { paymentId } = request.params as any;
+    const { paymentId } = request.params as GetPaymentParams;
 
     const payment = await this.paymentService.getPaymentById(paymentId);
 

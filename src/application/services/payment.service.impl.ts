@@ -30,29 +30,25 @@ export class PaymentServiceImpl implements PaymentService {
       product_id: data.productId,
     };
 
-    try {
-      const providerResponse = await this.paymentProviderService.initiatePayment(paymentRequest);
-      const { amount, currency, method, productId } = data;
-      const { tx_id, status } = providerResponse;
+    const providerResponse = await this.paymentProviderService.initiatePayment(paymentRequest);
+    const { amount, currency, method, productId } = data;
+    const { tx_id, status } = providerResponse;
 
-      const payment: Payment = {
-        amount,
-        currency,
-        method,
-        productId,
-        paymentId: tx_id,
-        status: this.mapToPaymentStatus(status),
-      };
+    const payment: Payment = {
+      amount,
+      currency,
+      method,
+      productId,
+      paymentId: tx_id,
+      status: this.mapToPaymentStatus(status),
+    };
 
-      await this.paymentRepository.create(payment);
+    await this.paymentRepository.create(payment);
 
-      return {
-        paymentId: tx_id,
-        status: payment.status,
-      };
-    } catch (error) {
-      throw error;
-    }
+    return {
+      paymentId: tx_id,
+      status: payment.status,
+    };
   }
 
   async getPaymentById(paymentId: string): Promise<PaymentResponseDTO> {

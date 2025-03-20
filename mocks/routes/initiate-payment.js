@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
+const { payment } = require('../fixtures/payment');
 
 module.exports = [
   {
@@ -11,10 +11,7 @@ module.exports = [
         type: 'json',
         options: {
           status: 201,
-          body: {
-            tx_id: uuidv4(),
-            status: 'pending',
-          },
+          body: payment,
         },
       },
     ],

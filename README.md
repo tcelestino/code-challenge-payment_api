@@ -14,6 +14,7 @@ This project follows the hexagonal architecture (ports and adapters) pattern:
 ## Prerequisites
 
 - Node.js 20
+- Docker
 - Redis
 - MySQL
 - Yarn
@@ -53,6 +54,20 @@ yarn mock:server
 
 ```bash
 yarn dev
+```
+
+### Running production server
+
+1. Build the application:
+
+```bash
+yarn build
+```
+
+2. Start the application:
+
+```bash
+yarn start
 ```
 
 ## API Documentation

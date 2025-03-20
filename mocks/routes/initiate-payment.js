@@ -1,4 +1,4 @@
-const { payment } = require('../fixtures/payment');
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = [
   {
@@ -8,10 +8,11 @@ module.exports = [
     variants: [
       {
         id: 'success',
-        type: 'json',
+        type: 'middleware',
         options: {
-          status: 201,
-          body: payment,
+          middleware: (req, res, next, core) => {
+            res.status(201).json({ tx_id: uuidv4(), status: 'pending' });
+          },
         },
       },
     ],
